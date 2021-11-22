@@ -16,7 +16,7 @@ spec:
           claimName: shared-pvc
       containers:
       - name: chaincodeinstall1
-        image: hyperledger/fabric-tools:1.4
+        image: hyperledger/fabric-tools:latest
         imagePullPolicy: Always
         command: ["sh", "-c", "echo $GOPATH; cp -r /shared/artifacts/chaincode $GOPATH/src/; ls $GOPATH/src; peer chaincode install -n ${CHAINCODE_NAME} -v ${CHAINCODE_VERSION} -p chaincode_example02/"]
         env:
