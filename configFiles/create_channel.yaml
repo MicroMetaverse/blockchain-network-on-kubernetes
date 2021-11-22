@@ -29,7 +29,7 @@ spec:
           name: sharedvolume
 
       - name: createchannel
-        image: hyperledger/fabric-peer:1.4
+        image: hyperledger/fabric-peer:latest
         imagePullPolicy: Always
         command: ["sh", "-c", "while [ ! -f /shared/status_channeltx_complete ]; do echo Waiting for channeltx; sleep 2; done; peer channel create -o ${ORDERER_URL} -c ${CHANNEL_NAME} -f /shared/${CHANNEL_NAME}.tx && rm /shared/status_channeltx_complete && touch /shared/status_channelcreate_complete"]
         env:
